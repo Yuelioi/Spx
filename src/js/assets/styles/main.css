@@ -1,0 +1,11 @@
+@import "./base.css";
+@import "./dark.css";
+@import "./tailwindcss.css";
+
+h1,
+h2,
+span,
+p,
+div {
+  font-family: "Douyin";
+}

@@ -1,0 +1,22 @@
+[data-theme="dark"]:root {
+  --fallback-p: #491eff;
+  --fallback-pc: #d4dbff;
+  --fallback-s: #ff41c7;
+  --fallback-sc: #fff9fc;
+  --fallback-a: #00cfbd;
+  --fallback-ac: #00100d;
+  --fallback-n: #2b3440;
+  --fallback-nc: #d7dde4;
+  --fallback-b1: #292929; /* 背景 */
+  --fallback-b2: #333334;
+  --fallback-b3: #383838;
+  --fallback-bc: #f6f9fb; /* 文字 */
+  --fallback-in: #00b3f0;
+  --fallback-inc: #000000;
+  --fallback-su: #00ca92;
+  --fallback-suc: #000000;
+  --fallback-wa: #ffc22d;
+  --fallback-wac: #000000;
+  --fallback-er: #ff6f70;
+  --fallback-erc: #000000;
+}
