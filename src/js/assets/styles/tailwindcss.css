@@ -16,11 +16,22 @@
   .textarea:focus {
     outline: none;
   }
+  .btn:focus {
+    outline: none;
+  }
+  .input:focus {
+    outline: none;
+  }
+
   .textarea {
     @apply bg-base-100/50;
   }
 
   .center {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .container {
+    max-width: none; /* 禁用最大宽度 */
   }
 }

@@ -11,6 +11,8 @@ export default {
       center: true,
       padding: {
         DEFAULT: "0.75rem",
+        xxs: "0.25rem",
+        xs: "0.5rem",
         sm: "1rem",
         md: "1.25rem",
         lg: "1.5rem",
@@ -18,10 +20,12 @@ export default {
       },
     },
     screens: {
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
+      xxs: "100px",
+      xs: "180px",
+      sm: "320px",
+      md: "480px",
+      lg: "768px",
+      xl: "1024px",
     },
     extend: {
       gridTemplateColumns: {

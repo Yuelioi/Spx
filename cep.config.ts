@@ -30,14 +30,6 @@ const config: CEP_Config = {
       width: 600,
       height: 650,
     },
-    {
-      mainPath: "./settings/index.html",
-      name: "setting",
-      panelDisplayName: "Spx Settings",
-      autoVisible: false,
-      width: 600,
-      height: 650,
-    },
   ],
   build: {
     jsxBin: "off",

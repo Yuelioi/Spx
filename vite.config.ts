@@ -47,7 +47,7 @@ if (action) {
 }
 
 import vueJsx from "@vitejs/plugin-vue-jsx";
-import vueDevTools from "vite-plugin-vue-devtools";
+// import vueDevTools from "vite-plugin-vue-devtools";
 
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
@@ -62,7 +62,7 @@ export default defineConfig({
     vue(),
     cep(config),
     vueJsx(),
-    vueDevTools(),
+
     addDynamicIconSelectors(),
     AutoImport({
       dts: "auto-imports.d.ts",

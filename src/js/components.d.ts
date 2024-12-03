@@ -7,12 +7,11 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    GroupCard: typeof import('./main/views/GroupCard.vue')['default']
-    HeaderArea: typeof import('./common/HeaderArea.vue')['default']
-    HomeSearch: typeof import('./main/views/HomeSearch.vue')['default']
+    AppView: typeof import('./main/views/AppView.vue')['default']
+    HeaderArea: typeof import('./main/views/HeaderArea.vue')['default']
     HomeView: typeof import('./main/views/HomeView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SettingView: typeof import('./settings/views/SettingView.vue')['default']
+    SettingView: typeof import('./main/views/SettingView.vue')['default']
   }
 }

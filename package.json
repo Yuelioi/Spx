@@ -14,7 +14,7 @@
   "dependencies": {
     "@vueuse/core": "^12.0.0",
     "pinia": "^2.1.7",
-    "vue": "^3.2.46",
+    "vue": "^3.3.20",
     "vue-router": "^4.3.3",
     "fuse.js": "^7.0.0",
     "@vueuse/integrations": "^12.0.0"

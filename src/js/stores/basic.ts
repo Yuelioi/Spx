@@ -3,35 +3,28 @@ import { defineStore } from "pinia";
 import { useStorage } from "@vueuse/core";
 
 import { Script } from "../models/index";
+import { ref } from "vue";
 
 export const useBasicStore = defineStore("basic", () => {
   const theme = useStorage("theme", "light");
   const token = useStorage("token", "");
   const scriptFolders = useStorage<string[]>("scriptFolders", []);
+  const iconFolders = useStorage<string[]>("iconFolders", []);
 
   const scriptStores = ref<Script[]>([]);
+  const iconStores = ref<Map<string, string>>(new Map());
 
-  scriptStores.value.push({
-    id: "111111",
-    name: "11111",
-    path: "1111111111111111111111111",
-    show: false,
-    star: false,
-    order: 0,
-  });
-  scriptStores.value.push({
-    id: "222222",
-    name: "22222222",
-    path: "22222222222222222222222222222",
-    show: false,
-    star: false,
-    order: 0,
-  });
+  const showTitle = useStorage("showTitle", true);
+  const showIcon = useStorage("showIcon", true);
 
   return {
     token,
+    showTitle,
+    showIcon,
     theme,
+    iconFolders,
     scriptStores,
     scriptFolders,
+    iconStores,
   };
 });

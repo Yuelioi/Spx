@@ -6,6 +6,10 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
+  const Message: typeof import('./plugins/message/index')['Message']
+  const VAlert: typeof import('./plugins/alert/index')['VAlert']
+  const VDialog: typeof import('./plugins/dialog/index')['VDialog']
+  const VDialogPlugin: typeof import('./plugins/dialog/index')['VDialogPlugin']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
   const customRef: typeof import('vue')['customRef']

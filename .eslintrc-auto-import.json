@@ -80,6 +80,10 @@
     "watchSyncEffect": true,
     "useAdminStatus": true,
     "useBasicStore": true,
-    "useTheme": true
+    "useTheme": true,
+    "Message": true,
+    "VAlert": true,
+    "VDialog": true,
+    "VDialogPlugin": true
   }
 }
