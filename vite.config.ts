@@ -119,7 +119,7 @@ export default defineConfig({
         format: "cjs",
       },
     },
-    target: "chrome74",
+    target: "chrome61",
     outDir,
   },
 });

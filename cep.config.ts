@@ -25,7 +25,7 @@ const config: CEP_Config = {
     {
       mainPath: "./main/index.html",
       name: "main",
-      panelDisplayName: "Spx",
+      panelDisplayName: "YL. Spx",
       autoVisible: true,
       width: 600,
       height: 650,
@@ -33,7 +33,7 @@ const config: CEP_Config = {
   ],
   build: {
     jsxBin: "off",
-    sourceMap: true,
+    sourceMap: false,
   },
   zxp: {
     country: "US",
@@ -42,10 +42,10 @@ const config: CEP_Config = {
     password: "mypassword",
     tsa: "http://timestamp.digicert.com/",
     sourceMap: false,
-    jsxBin: "off",
+    jsxBin: "replace",
   },
   installModules: [],
-  copyAssets: [],
+  copyAssets: ["public"],
   copyZipAssets: [],
 };
 export default config;

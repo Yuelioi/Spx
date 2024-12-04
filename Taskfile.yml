@@ -1,0 +1,14 @@
+# https://taskfile.dev
+
+version: "3"
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  dev:
+    cmds:
+      - pnpm dev
+  build:
+    cmds:
+      - pnpm build

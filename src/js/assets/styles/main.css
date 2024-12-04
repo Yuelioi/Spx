@@ -2,10 +2,48 @@
 @import "./dark.css";
 @import "./tailwindcss.css";
 
-h1,
-h2,
-span,
-p,
-div {
-  font-family: "Douyin";
+:root {
+  --fallback-p: #444dc8;
+  --fallback-pc: #d5dcf7;
+  --fallback-s: #bc2f5b;
+  --fallback-sc: #f7d7dc;
+  --fallback-a: #38d05c;
+  --fallback-ac: #011003;
+  --fallback-n: #262931;
+  --fallback-nc: #cfd0d2;
+  --fallback-b1: #ffffff;
+  --fallback-b2: #f6f9fb;
+  --fallback-b3: #f3f3f4;
+  --fallback-bc: #121414;
+  --fallback-in: #2563eb;
+  --fallback-inc: #d2e2ff;
+  --fallback-su: #16a34a;
+  --fallback-suc: #f6f9fb;
+  --fallback-wa: #f3a034;
+  --fallback-wac: #110500;
+  --fallback-er: #dc2626;
+  --fallback-erc: #ffd9d4;
+}
+
+[data-theme="dark"]:root {
+  --fallback-p: #444dc8;
+  --fallback-pc: #d5dcf7;
+  --fallback-s: #bc2f5b;
+  --fallback-sc: #f7d7dc;
+  --fallback-a: #58c27c;
+  --fallback-ac: #030e05;
+  --fallback-n: #3d4451;
+  --fallback-nc: #d5d6da;
+  --fallback-b1: #232323;
+  --fallback-b2: #19222e;
+  --fallback-b3: #1d1d1d;
+  --fallback-bc: #cdd0d3;
+  --fallback-in: #2563eb;
+  --fallback-inc: #d2e2ff;
+  --fallback-su: #16a34a;
+  --fallback-suc: #000a02;
+  --fallback-wa: #d97706;
+  --fallback-wac: #110500;
+  --fallback-er: #dc2626;
+  --fallback-erc: #ffd9d4;
 }

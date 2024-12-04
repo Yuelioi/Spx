@@ -11,7 +11,12 @@ function switchTheme(_theme: string) {
 }
 
 export function useTheme(_themes?: string[]) {
-  if (_themes && Array.isArray(_themes) && _themes.length > 0) {
+  if (
+    _themes &&
+    Array.isArray(_themes) &&
+    _themes.length > 0 &&
+    themes.length == 0
+  ) {
     themes.splice(0, themes.length, ..._themes);
   }
 

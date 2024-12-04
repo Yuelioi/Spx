@@ -1,5 +1,5 @@
 <template>
-  <div class="relative wave flex items-center bg-base-200">
+  <div class="relative hidden sm:flex wave items-center bg-base-200">
     <button
       class="btn btn-ghost self-center btn-sm"
       @click="switcher = 1">
@@ -33,17 +33,15 @@
 </template>
 
 <script setup lang="ts">
-  const store = useBasicStore();
-  const { theme } = storeToRefs(store);
-
   let switcher = defineModel();
 
-  const { switchTheme } = useTheme(["light", "dark"]);
+  const { switchTheme } = useTheme();
   const emit = defineEmits(["updateSwitcher"]);
 
   function changeTheme() {
-    console.log(theme.value);
-    theme.value = theme.value == "light" ? "dark" : "light";
-    switchTheme(theme.value);
+    const { config } = useConfig();
+    config.value.theme = config.value.theme == "light" ? "dark" : "light";
+
+    switchTheme(config.value.theme);
   }
 </script>

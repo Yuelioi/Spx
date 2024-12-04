@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppView: typeof import('./main/views/AppView.vue')['default']
+    DragBox: typeof import('./main/views/DragBox.vue')['default']
     HeaderArea: typeof import('./main/views/HeaderArea.vue')['default']
     HomeView: typeof import('./main/views/HomeView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

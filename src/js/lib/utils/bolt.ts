@@ -25,6 +25,7 @@ export const evalES = (script: string, isGlobal = false): Promise<string> => {
       ? ""
       : `var host = typeof $ !== 'undefined' ? $ : window; host["${ns}"].`;
     const fullString = pre + script;
+    console.log(fullString);
     csi.evalScript(
       "try{" + fullString + "}catch(e){alert(e);}",
       (res: string) => {
@@ -69,7 +70,7 @@ type ReturnType<F extends Function> = F extends (...args: infer A) => infer B
 
 export const evalTS = <
   Key extends string & keyof Scripts,
-  Func extends Function & Scripts[Key]
+  Func extends Function & Scripts[Key],
 >(
   functionName: Key,
   ...args: ArgTypes<Func>

@@ -1,43 +1,44 @@
-import { fs, path } from "../../lib/cep/node";
+import { fs, os, path } from "../../lib/cep/node";
+import { evalTS } from "../../lib/utils/bolt";
 import { Message } from "../../plugins/message";
 
-export function readScripts(showMessage = false) {
+const defaultConfig = {
+  theme: "light",
+  scriptFolders: [],
+  iconFolders: [],
+  starScripts: [],
+  scriptStores: [],
+  iconStores: [],
+  showTitle: true,
+  showIcon: true,
+};
+
+// 必须先加载配置
+export async function loadConfig() {
   const store = useBasicStore();
-  const { scriptFolders, scriptStores, iconStores } = storeToRefs(store);
+  let { extFolderPath, configPath } = storeToRefs(store);
 
-  scriptStores.value = [];
-  scriptFolders.value.forEach((folder: string) => {
-    const files = fs.readdirSync(folder);
-    files.forEach((file) => {
-      if (file.endsWith(".jsx") || file.endsWith(".jsxbin")) {
-        const ext = path.extname(file);
-        const name = path.basename(file, ext);
+  extFolderPath.value = await evalTS("getExtensionFolderPath");
 
-        const icon = iconStores.value.get(name);
+  const cFolder = path.join(extFolderPath.value, "configs");
+  const cPath = path.join(cFolder, "config.json");
+  if (!fs.existsSync(cFolder)) {
+    console.log(1);
 
-        scriptStores.value.push({
-          name: name,
-          icon: icon,
-          path: file,
-          show: true,
-          star: false,
-          order: 0,
-        });
-      }
-    });
-  });
-
-  if (showMessage) {
-    Message({ message: "读取脚本成功" });
+    fs.mkdirSync(path.join(extFolderPath.value, "configs"));
   }
+  if (!fs.existsSync(cPath)) {
+    console.log(2);
+    fs.writeFileSync(cPath, JSON.stringify(defaultConfig));
+  }
+
+  configPath.value = cPath;
 }
 
 export function readIcons(showMessage = false) {
-  const store = useBasicStore();
-  const { iconFolders, iconStores } = storeToRefs(store);
+  const { config } = useConfig();
 
-  iconStores.value = new Map();
-  iconFolders.value.forEach((folder: string) => {
+  config.value.iconFolders.forEach((folder: string) => {
     const files = fs.readdirSync(folder);
     files.forEach((file) => {
       if (
@@ -47,12 +48,48 @@ export function readIcons(showMessage = false) {
       ) {
         const ext = path.extname(file);
         const name = path.basename(file, ext);
-        iconStores.value.set(name, path.join(folder, file));
+        config.value.iconStores.set(name, path.join(folder, file));
       }
     });
   });
 
   if (showMessage) {
     Message({ message: "读取图标成功" });
+  }
+}
+
+export function readScripts(showMessage = false) {
+  const { config } = useConfig();
+
+  config.value.scriptStores = [];
+  config.value.scriptFolders.forEach((folder: string) => {
+    const files = fs.readdirSync(folder);
+    files.forEach((file) => {
+      if (file.endsWith(".jsx") || file.endsWith(".jsxbin")) {
+        const ext = path.extname(file);
+        const name = path.basename(file, ext);
+        let star = false;
+        const icon = config.value.iconStores.get(name);
+
+        if (config.value.starScripts.get(name)) {
+          star = true;
+        }
+
+        const scriptPath = path.join(folder, file);
+
+        config.value.scriptStores.push({
+          name: name,
+          icon: icon,
+          path: scriptPath,
+          show: true,
+          star: star,
+          order: 0,
+        });
+      }
+    });
+  });
+
+  if (showMessage) {
+    Message({ message: "读取脚本成功" });
   }
 }

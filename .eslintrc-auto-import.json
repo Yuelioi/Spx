@@ -84,6 +84,7 @@
     "Message": true,
     "VAlert": true,
     "VDialog": true,
-    "VDialogPlugin": true
+    "VDialogPlugin": true,
+    "useConfig": true
   }
 }
