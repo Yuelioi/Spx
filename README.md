@@ -23,3 +23,11 @@ nodejs中文官网: https://nodejs.org/zh-cn
 vue中文官网: https://cn.vuejs.org/guide/introduction
 
 脚本开发群:885816198
+
+## 用前须知
+
+请双击Add keys.reg, 注册调试工具
+
+首选项- 脚本 允许访问文件 调试
+
+建议ae 2022起步 太低版本不一定可以使用
