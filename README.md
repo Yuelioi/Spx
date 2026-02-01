@@ -30,4 +30,8 @@ vue中文官网: https://cn.vuejs.org/guide/introduction
 
 首选项- 脚本 允许访问文件 调试
 
-建议ae 2022起步 太低版本不一定可以使用
+建议ae 2020起步 太低版本不一定可以使用
+
+## 其他注意事项
+
+更多开发技巧 参考 https://github.com/Yuelioi/adobe-cep-demo
